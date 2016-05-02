@@ -9,7 +9,7 @@ $drinks[]="Jim Kiir";
 $drinks[]="Kuulus Teder";
 $drinks[]="keefir";
 
-echo $newLine . "<h2>üks väärtus</h2>";
+echo $newLine . "<h2>Üks väärtus</h2>";
 echo $newLine . $drinks[3];
 
 echo $newLine . $newLine ."<h2>var_dump()</h2>";
