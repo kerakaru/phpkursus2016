@@ -23,4 +23,14 @@ $rand = rand(0, sizeof($drinks)-1);
 echo $newLine . $newLine . "<h2>random väärtus</h2>";
 echo $newLine . $drinks[$rand];
 
+
+echo $newLine . "<h2>Kõik joogid</h2>";
+echo "<ul>";
+for ($i = 0; $i < sizeof($drinks); $i++)
+{
+    echo "<li>" . $drinks[$i] . " (" . rand(1,10) . "€)</li>";
+} 
+echo "</ul>";
+
+
 ?>
