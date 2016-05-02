@@ -12,10 +12,31 @@ function getInputFile($inFileName)
 }
 
 
+function removeWhiteSpaces($inString)
+{
+    return str_replace(" 	","#", $inString);
+}
+
+
 function convertStringToArray($inString)
 {
     
     $tmpArray = explode("\n", $inString);
+    
+    
+    foreach ($tmpArray as $key => $val)
+    //for (i==1; i<20; i++)
+    {
+        $val = removeWhiteSpaces($val);
+        $temp = explode("#", $val);
+        $tmpArray[$temp[0]] = $temp[1];
+        //$surename = explode("    ", $rows[$key]);
+        
+        //print_r($surename);
+        //$counter++;
+        //echo "$counter) Massiivi elemendi indeks: " .  trim($key) . " väärtusega: $val<br />";
+    }
+    
     return $tmpArray;
 }
 
@@ -64,7 +85,7 @@ echo "<pre>";
     print_r( convertStringToArray(getInputFile($inputFileName)) );
 echo "</pre><hr />";
 
-getname(null);
+//getname(null);
 
 
 ?>
