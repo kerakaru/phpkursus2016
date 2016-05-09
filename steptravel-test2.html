@@ -13,7 +13,15 @@
   <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <script>
   $(function() {
-    $( "#datepicker" ).datepicker();
+    $( "#datepicker" ).datepicker({
+      //altField: "#alternate",
+      //altFormat: "DD, d MM, yy",
+      onSelect: function(date) {
+            alert(date);
+            $("#hidedDate").val(date);
+            alert($("#hidedDate").value + "ee");
+        }
+    });
   });
   </script>
 
@@ -24,15 +32,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <body class="w3-light-grey">
 
 <!-- UUS tulemine -->
+<!--
 <div class="w3-container w3-dark-grey w3-padding-hor-32">
     <div class="w3-row">
     
-        <input type="text" id="datepicker" />
+        <input type="text" id="datepicker7" />
 
     </div>
 </div>
-
-
+-->
 
 <!-- /UUS tulemine -->
 
@@ -127,11 +135,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
  
   <div class="w3-container w3-dark-grey w3-padding-hor-32">
     <div class="w3-row">
-<!-- form -->
+<form>
       <div class="w3-container w3-third">
         <h5 class="w3-bottombar w3-border-green">Kalender</h5>
         <p>Language</p>
-        <p>Date: <input type="text" id="datepicker-4" /></p>
+        <!-- <p><input type="text" name="alternate" id="alternate" /></p> -->
+      <p>Date: <input type="text" id="datepicker" /></p> 
+      <input type="hidden" name="hidedDate" id="hidedDate" />
+      <div id="datepicker"></div>
 
       </div>
 
@@ -139,7 +150,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <h5 class="w3-bottombar w3-border-red">Sammud</h5>
         <p><input type="text" id="inSteps" name="inSteps" /></p>
       </div>
-<!-- /form -->
+      <input type="submit" />
+</form>
 
       <div class="w3-container w3-third">
         <h5 class="w3-bottombar w3-border-orange">Kokkuvõte</h5>
