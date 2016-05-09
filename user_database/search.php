@@ -48,7 +48,7 @@ else
 
 
 $result = mysql_query($query) OR
-die("Ebaınnestus: " . mysql_error());
+die("Eba√µnnestus: " . mysql_error());
 
 echo "<table border=1>";
 echo "<th>jrkn</th>";
@@ -57,7 +57,7 @@ echo "<th>kasutajanimi</th>";
 echo "<th>nimi</th>";
 echo "<th>e-post</th>";
 echo "<th>keel</th>";
-echo "<th>m‰rkus</th>";
+echo "<th>m√§rkus</th>";
 echo "<th>uudiskiri</th>";
 echo "<th>aktiivne</th>";
 echo "<th>sis. kp.</th>";
