@@ -18,4 +18,14 @@ phpkursus2016
 
 * Ülesannete kirjeldus: [php_yl02.txt](http://students.tmk.edu.ee/php/kursus/kodused_ylesanded/php_yl02.txt)
 * Ülesannete lahendused: [phpkursus2016/ylesanded](https://github.com/kerakaru/phpkursus2016/tree/master/ylesanded)
-    * ...
+    * [yl0201](https://github.com/kerakaru/phpkursus2016/blob/master/ylesanded/yl0201.php)
+    * [yl0202](https://github.com/kerakaru/phpkursus2016/blob/master/ylesanded/yl0202.php)
+    * [yl0203](https://github.com/kerakaru/phpkursus2016/blob/master/ylesanded/yl0203.php)
+    * [yl0204](https://github.com/kerakaru/phpkursus2016/blob/master/ylesanded/yl0204.php)
+    * [yl0205](https://github.com/kerakaru/phpkursus2016/blob/master/ylesanded/yl0205.php)
+
+### Ülesanded 03
+
+* Ülesannete kirjeldus: [php_yl02.txt](http://students.tmk.edu.ee/php/kursus/kodused_ylesanded/php_yl03.txt)
+* Ülesannete lahendused: [phpkursus2016/ylesanded](https://github.com/kerakaru/phpkursus2016/tree/master/ylesanded)
+    * ..
