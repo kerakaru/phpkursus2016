@@ -1,6 +1,7 @@
 <?php
 /* ***********
  Ülesanne 0202
+ Kerakaru - PHP kursus 2016
  ************* */
 /*
 Lisa käsitsi massiivi 10 looma nime kasutades massiivi kohanäitu. Nt. $animals[0]="karu" jne.

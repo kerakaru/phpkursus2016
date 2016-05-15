@@ -1,6 +1,7 @@
 <?php
 /* ***********
  Ülesanne 0203
+ Kerakaru - PHP kursus 2016
  ************* */
 /*
 Lisa käsitsi massiivi kümne näitleja nime kasutades massiivi loomiseks array funktsiooni

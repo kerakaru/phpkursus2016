@@ -1,6 +1,7 @@
 <?php
 /* ***********
  Ülesanne 0204
+ Kerakaru - PHP kursus 2016
  ************* */
 /*
 Lisa massiivi inimese isikuandmed (nimi, vanus jne.) min 5 elementi.

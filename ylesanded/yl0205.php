@@ -1,6 +1,7 @@
 <?php
 /* ***********
  Ülesanne 0205
+ Kerakaru - PHP kursus 2016
  ************* */
 /*
 Sisesta käsitsi 3x3 kahemõõtmeline massiiv. Massiivi elementideks sisesta filmide nimed.

@@ -1,4 +1,12 @@
 <?php
+/* ***********
+ Ülesanne 0201
+ Kerakaru - PHP kursus 2016
+ ************* */
+/*
+Genereeri tsükliga 100 täisarvust koosnev massiiv.
+Väljasta see "print_r" funktsiooniga.
+*/
 
 echo "<h1>Ülesanne 0201</h1>";
 

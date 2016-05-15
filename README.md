@@ -26,6 +26,6 @@ phpkursus2016
 
 ### Ülesanded 03
 
-* Ülesannete kirjeldus: [php_yl02.txt](http://students.tmk.edu.ee/php/kursus/kodused_ylesanded/php_yl03.txt)
+* Ülesannete kirjeldus: [php_yl03.txt](http://students.tmk.edu.ee/php/kursus/kodused_ylesanded/php_yl03.txt)
 * Ülesannete lahendused: [phpkursus2016/ylesanded](https://github.com/kerakaru/phpkursus2016/tree/master/ylesanded)
     * ..
