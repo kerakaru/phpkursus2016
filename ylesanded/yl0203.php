@@ -16,7 +16,6 @@ $stars = array('Sean Connery','David Niven','George Lazenby','Roger Moore','Timo
 
 
 #for tükliga väljastus
-//foreach ($animals as $key => $val)
 for ($i=0; $i<sizeof($stars); $i++)
 {
   echo $i+1 . ". " . $stars[$i] . "<br />";
