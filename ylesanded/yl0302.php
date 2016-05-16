@@ -66,7 +66,7 @@ function kustuta_element()
 echo "<p>Alustus massiiv:</p>";
 echo kuva_massiiv($mas);
 
-echo "<p>Elementide vahetmaine massiivis:</p>";
+echo "<p>Elementide vahetamine massiivis:</p>";
 $mas = vaheta_elemendid(3, 7, $mas);
 echo kuva_massiiv($mas);
 
