@@ -30,7 +30,7 @@ $loomad = vaheta_elemendid(3, 7, $loomad);
 */
 
 
-echo "<h1>Ülesanne 0301</h1>";
+echo "<h1>Ülesanne 0302</h1>";
 
 $mas = array('Karu', 'Jänes', 'Hunt', 'Rebane', 'Hirv', 'Hiir', 'Põder', 'Ahv', 'Mäger', 'Mutt');
 
