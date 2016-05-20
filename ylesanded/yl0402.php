@@ -13,7 +13,6 @@ Tee tsükliga 20 "radio buttonit". Pane neile kõigile üks nimi "radio" ja erin
 //echo "<h1>Ülesanne 0402</h1>";
 
 
-$arrContact = array('Ants Ploom', 'Uulitsa 24, 91827 Goorod, Eesti', 'img/w3schools-img_avatar1.png', 'http://google.ee');
 
 ?>
 <!DOCTYPE html>
