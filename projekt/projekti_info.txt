@@ -39,8 +39,8 @@ korral muudetud tekstidega oleks v�imalik v�rrelda.<br>
 <b>Autorist ja programmist</b><br>
 K�ivitamine:
 <a href=http://www.tmk.edu.ee/~domberg/php/projekt3/>Lahe lugu</a><br>
-autor: Kalle Kaalik<br>
-r�hm: ta23<br>
+autor: Kerakaru<br>
+rühm: PHP kursus 2016<br>
 juhendaja: A. Klooster<br>
 PHP projekt 3 aines Arvutiv�rgud<br>
-15.10.2009
+15.05.2016
