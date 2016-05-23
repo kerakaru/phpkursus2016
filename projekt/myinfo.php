@@ -1,4 +1,6 @@
-<?php  
+<?php
+
+session_start();
 
 include "dbconnect.php";
 include "functions.php";
@@ -16,8 +18,8 @@ check_rights(USER);
   <!-- Header -->
   <header class="w3-container" style="padding-top:22px">
     <h3>
-		<img src="http://www.w3schools.com/w3css/img_avatar5.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:40px"> 
-<?php  
+		<img src="http://www.w3schools.com/w3css/img_avatar5.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:40px">
+<?php
   if (isset($_SESSION['login_user']['id_users']))
   {
     echo "Tere " . $_SESSION['login_user']['name'] . "!";
@@ -25,10 +27,10 @@ check_rights(USER);
 ?>
 	</h3>
     <p style="margin-left:56px; margin-top:-10px;">
-<?php  
+<?php
   if (isset($_SESSION['login_user']['id_users']))
   {
-    echo "(" . $_SESSION['login_user']['username'] . ", viimane login: 
+    echo "(" . $_SESSION['login_user']['username'] . ", viimane login:
     " . $_SESSION['login_user']['last_login_date'] . "). Täna on: $today";
   }
 ?>
@@ -48,22 +50,23 @@ check_rights(USER);
 <h5 class="w3-bottombar w3-border-green">Minu andmed</h5>
 
 
-<?php  
-  
+<?php
+
    $query = "SELECT * FROM users WHERE id_users='{$_SESSION['login_user']['id_users']}' LIMIT 1";
 
   $result = mysql_query($query) OR die("Ebaõnnestus: " . mysql_error());
-  
+
 
 //$query = "SELECT * FROM users WHERE deleted!='1' ORDER BY id_users ASC";
 
 
 echo "<table border=1>";
 
-while($row = mysql_fetch_assoc($result))  
+$counter = 0;
+while($row = mysql_fetch_assoc($result))
 {
   $counter++;
-  
+
   echo "<tr><th>jrkn</th><td>".$counter."</td></tr>";
   echo "<tr><th>ID</th><td>".$row['id_users']."</td></tr>";
   echo "<tr><th>kasutajanimi</th><td>".$row['username']."&nbsp;</td></tr>";
@@ -77,12 +80,12 @@ while($row = mysql_fetch_assoc($result))
   echo "<tr><th>Andmeid uuendatud</th><td>".$row['date_change']."</td></tr>";
   echo "<tr><th>viimane login</th><td>".$row['last_login_date']."</td></tr>";
   echo "<tr><th>samme kokku</th><td>".$row['steps_count']."</td></tr>";
-  
+
 }
 
 echo "</table>";
 ?>
-  
+
 
 	</div>
 
@@ -92,7 +95,7 @@ echo "</table>";
       <div class="w3-container w3-third">
         <h5 class="w3-bottombar w3-border-red">Kalender</h5>
         <!-- <p><input type="text" name="alternate" id="alternate" /></p> -->
-      <p>Date: <input type="text" id="datepicker" value="<?php if(isset($_GET["hidedDate"])) { echo $_GET['hidedDate']; } ?>" /></p> 
+      <p>Date: <input type="text" id="datepicker" value="<?php if(isset($_GET["hidedDate"])) { echo $_GET['hidedDate']; } ?>" /></p>
       <input type="hidden" name="hidedDate" id="hidedDate" value="<?php if(isset($_GET["hidedDate"])) { echo $_GET['hidedDate']; } ?>" />
       <!-- <div id="datepicker"></div> -->
 
@@ -115,13 +118,13 @@ echo "</table>";
 if($_POST['nupp'] == "Sisesta")
 {
   $_GET['id_edit'] = str_secure($_GET['id_edit']);
-  
+
   #let's make strings secure
   foreach($_POST as $key => $val)
   {
     $_POST[$key] = str_secure($_POST[$key]);
   }
-  
+
   #DB query
   $query = "UPDATE users SET
   username='".$_POST['username']."',
@@ -135,21 +138,21 @@ if($_POST['nupp'] == "Sisesta")
   id_users_change='".$_SESSION['login_user']['id_users']."'
   WHERE id_users='".$_GET['id_edit']."'
   ";
-  
+
   echo $query;
-  
+
   mysql_query($query) OR
   die("Ebaõnnestus EDIT: " . mysql_error());
-  
+
   echo '<META HTTP-EQUIV="Refresh" CONTENT="0; URL=search.php">';
 }
 
-  
+
   $query = "SELECT * FROM users WHERE id_users='${_GET['id_edit']}' LIMIT 1";
 
   $result = mysql_query($query) OR
   die("Ebaõnnestus: " . mysql_error());
-  
+
   $row = mysql_fetch_assoc($result);
 
 ?>

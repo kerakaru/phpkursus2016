@@ -1,6 +1,6 @@
-<?php  
+<?php
 
-//session_start();
+session_start();
 
 include "dbconnect.php";
 include "functions.php";
@@ -12,19 +12,21 @@ check_rights(MODE);
 
 <h3>Kasutajate otsing</h3>
 
-<?php  
+<?php
 
 #search
-$_POST['search'] = str_secure($_POST['search']);
-
-echo "<form action=".$_SERVER['SCRIPT_NAME']." method=post>";
-echo "<input type=text name=search value=\"".$_POST['search']."\">";
+if (isset($_POST['search']))
+{
+  $_POST['search'] = str_secure($_POST['search']);
+}
+echo "<form action=" . $_SERVER['SCRIPT_NAME'] . " method=post>";
+echo "<input type=text name=search value=\"" .  $_POST['search']  . "\">";
 echo "<input type=submit name=nupp value=Otsi>";
 echo "</form>";
-  
+
 if ($_POST['search'] != "")
 {
-  $query = "SELECT * FROM users WHERE 
+  $query = "SELECT * FROM users WHERE
   (username LIKE '%".$_POST['search']."%' OR
   name LIKE '%".$_POST['search']."%' OR
   email LIKE '%".$_POST['search']."%')
@@ -32,8 +34,8 @@ if ($_POST['search'] != "")
   ORDER BY id_users ASC LIMIT 100";
 }
 else
-{  
-  $query = "SELECT * FROM users WHERE deleted!='1' 
+{
+  $query = "SELECT * FROM users WHERE deleted!='1'
   ORDER BY id_users ASC LIMIT 100";
 }
 
@@ -56,11 +58,12 @@ echo "<th>muut. kp.</th>";
 echo "<th>Samme kokku</th>";
 echo "<th>muuda</th>";
 echo "<th>kustuta</th>";
-  
-while($row = mysql_fetch_assoc($result))  
+
+$counter = 0;
+while($row = mysql_fetch_assoc($result))
 {
   $counter++;
-  
+
   echo "<tr>";
   echo "<td>".$counter."</td>";
   echo "<td>".$row['id_users']."</td>";
@@ -79,8 +82,8 @@ while($row = mysql_fetch_assoc($result))
   {
     echo "<td><a href=change.php?id_edit=".$row['id_users'].">
     <img src=img/edit.gif></a></td>";
-    echo "<td><a href=change.php?id_del=".$row['id_users']." 
-    onClick='return confirm(\"Oled kindel, et tahad kustutada id: 
+    echo "<td><a href=change.php?id_del=".$row['id_users']."
+    onClick='return confirm(\"Oled kindel, et tahad kustutada id:
     ".$row['id_users']." ?\")'>
     <img src=img/del.gif></a></td>";
   }
@@ -89,7 +92,7 @@ while($row = mysql_fetch_assoc($result))
     echo "<td>Muutmiseks <a href=login.php>logi sisse</a></td>";
     echo "<td>Kustutamiseks <a href=login.php>logi sisse</a></td>";
   }
-  
+
   echo "</tr>";
 }
 

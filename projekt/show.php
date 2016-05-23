@@ -1,4 +1,6 @@
-<?php  
+<?php
+
+session_start();
 
 include "dbconnect.php";
 include "functions.php";
@@ -12,8 +14,8 @@ check_rights(ANONYMOUS);
 <h3>Kasutajate vaatamine</h3>
 
 
-<?php  
-  
+<?php
+
 $query = "SELECT * FROM users WHERE deleted!='1' ORDER BY id_users ASC";
 
 $result = mysql_query($query) OR
@@ -32,11 +34,12 @@ echo "<th>aktiivne</th>";
 echo "<th>sis. kp.</th>";
 echo "<th>muut. kp.</th>";
 echo "<th>samme kokku</th>";
-  
-while($row = mysql_fetch_assoc($result))  
+
+$counter = 0;
+while($row = mysql_fetch_assoc($result))
 {
   $counter++;
-  
+
   echo "<tr>";
   echo "<td>".$counter."</td>";
   echo "<td>".$row['id_users']."</td>";
@@ -51,11 +54,11 @@ while($row = mysql_fetch_assoc($result))
   echo "<td>".$row['date_change']."</td>";
   echo "<td>".$row['steps_count']."</td>";
   echo "</tr>";
-  
+
 }
 
 echo "</table>";
-  
+
 include "footer.php";
 
 ?>
