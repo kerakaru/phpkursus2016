@@ -88,10 +88,9 @@ echo "</table>";
 
 	<!-- <div class="w3-col w3-twothird"> -->
 
-<form>
+<form action="<?php  echo $_SERVER['SCRIPT_NAME']; ?>" >
       <div class="w3-container w3-third">
         <h5 class="w3-bottombar w3-border-red">Kalender</h5>
-        <p>Language</p>
         <!-- <p><input type="text" name="alternate" id="alternate" /></p> -->
       <p>Date: <input type="text" id="datepicker" value="<?php if(isset($_GET["hidedDate"])) { echo $_GET['hidedDate']; } ?>" /></p> 
       <input type="hidden" name="hidedDate" id="hidedDate" value="<?php if(isset($_GET["hidedDate"])) { echo $_GET['hidedDate']; } ?>" />
@@ -103,7 +102,7 @@ echo "</table>";
         <h5 class="w3-bottombar w3-border-yellow">Sammud</h5>
         <p><input type="text" id="inSteps" name="inSteps" value="<?php if(isset($_GET["inSteps"])) { echo $_GET['inSteps']; } ?>" /></p>
       </div>
-      <input type="submit" />
+      <input type="submit" name="nupp" value="Sisesta" />
 </form>
 
 
@@ -111,6 +110,54 @@ echo "</table>";
 
 </div>
 </div>
+
+<?php
+if($_POST['nupp'] == "Sisesta")
+{
+  $_GET['id_edit'] = str_secure($_GET['id_edit']);
+  
+  #let's make strings secure
+  foreach($_POST as $key => $val)
+  {
+    $_POST[$key] = str_secure($_POST[$key]);
+  }
+  
+  #DB query
+  $query = "UPDATE users SET
+  username='".$_POST['username']."',
+  name='".$_POST['name']."',
+  email='".$_POST['email']."',
+  language='".$_POST['language']."',
+  comment='".$_POST['comment']."',
+  newsletter='".$_POST['newsletter']."',
+  status='".$_POST['status']."',
+  date_change=NOW(),
+  id_users_change='".$_SESSION['login_user']['id_users']."'
+  WHERE id_users='".$_GET['id_edit']."'
+  ";
+  
+  echo $query;
+  
+  mysql_query($query) OR
+  die("Ebaõnnestus EDIT: " . mysql_error());
+  
+  echo '<META HTTP-EQUIV="Refresh" CONTENT="0; URL=search.php">';
+}
+
+  
+  $query = "SELECT * FROM users WHERE id_users='${_GET['id_edit']}' LIMIT 1";
+
+  $result = mysql_query($query) OR
+  die("Ebaõnnestus: " . mysql_error());
+  
+  $row = mysql_fetch_assoc($result);
+
+?>
+
+
+
+
+
 <?php
 include "footer.php";
 
