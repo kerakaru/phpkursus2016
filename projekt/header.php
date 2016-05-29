@@ -18,10 +18,10 @@
     $( "#datepicker" ).datepicker({
       //altField: "#alternate",
       //altFormat: "DD, d MM, yy",
+      dateFormat: "yy-mm-dd",
       onSelect: function(date) {
-            alert(date);
             $("#hidedDate").val(date);
-            alert($("#hidedDate").value + "ee");
+            //alert($("#hidedDate").value + "ee");
         }
     });
   });
@@ -37,7 +37,7 @@
 <a href="insert.php">Sisestamine</a> |
 <a href="change.php">Muutmine</a>(ei tööta) |
 <a href="show.php">Vaatamine</a> |
-<a href="myinfo.php">Minu andmed</a> |
+<a href="myinfo.php">Minu andmed</a> (<a href="show2.php">sammud</a>) |
 <a href="search.php">Otsing</a> |
 <a href="login.php">Sisse logimine</a> |
 <a href="logout.php">Välja logimine</a> |

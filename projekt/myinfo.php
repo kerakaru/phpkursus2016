@@ -84,6 +84,36 @@ while($row = mysql_fetch_assoc($result))
 }
 
 echo "</table>";
+
+/* ================== */
+
+
+//http://stackoverflow.com/questions/14805851/mysql-sum-column-values-based-on-row-from-the-same-table
+$query2 = "SELECT SUM(fDaysSteps) AS Total FROM tblSteps WHERE user_id = " . $_SESSION['login_user']['id_users'];
+
+$result2 = mysql_query($query2) OR die("Ebaõnnestus2: " . mysql_error());
+
+/*
+"SELECT
+    SUM(IF(user_id = " . {$_SESSION['login_user']['id_users']} . ", fDaysSteps, 0)) AS 'CurrentUser',
+    SUM(fDaysSteps) AS Total
+FROM
+    tblSteps
+WHERE
+    user_id = " . {$_SESSION['login_user']['id_users']} . "
+GROUP BY
+    user_id
+*/
+
+$counter = 0;
+while($row = mysql_fetch_assoc($result2))
+{
+  $counter++;
+
+  echo "kokku samme: " . $row['Total'] . "<br />" ;
+
+}
+
 ?>
 
 
@@ -115,7 +145,41 @@ echo "</table>";
 </div>
 
 <?php
-if($_POST['nupp'] == "Sisesta")
+
+
+#let's make strings secure
+foreach($_POST as $key => $val)
+{
+  $_POST[$key] = str_secure($_POST[$key]);
+}
+
+//if($_POST['nupp'] == "Sisesta")
+if($_GET['nupp'] == "Sisesta")
+{
+
+  #DB query
+  $query = "INSERT INTO tblSteps SET
+  fDate ='".$_GET['hidedDate']."',
+  fDaysSteps ='".$_GET['inSteps']."',
+  fAddedTime = NOW(),
+  fUpdateTime = NOW(),
+  user_id=".$_SESSION['login_user']['id_users']."
+  ";
+
+  //echo $query;
+
+  mysql_query($query) OR
+  die("Ebaõnnestus: " . mysql_error());
+
+}
+
+
+
+
+
+
+/*  EDIT block
+if( (isset($_POST['nupp'])) && ($_POST['nupp'] == "Sisesta") )
 {
   $_GET['id_edit'] = str_secure($_GET['id_edit']);
 
@@ -154,7 +218,7 @@ if($_POST['nupp'] == "Sisesta")
   die("Ebaõnnestus: " . mysql_error());
 
   $row = mysql_fetch_assoc($result);
-
+*/
 ?>
 
 
