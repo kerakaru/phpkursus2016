@@ -1,15 +1,3 @@
-* suunitlege fail kasutajale mitte niiv�rd �petajale
-* projekt panna SVN'i kataloogi "PHP/projekt1/kasutajanimi/info.php"
-* andmebaasi osa panna mysql_fulldump.php faili
-* infofail olgu allapool antud kuju ja struktuuriga v�i samav��rne
-* esimene sisuline rida v�tku 1 lausega kokku mida programm teeb
-* edasi kirjeldada kasutajale kuidas programm t��tab
-* lisada programmi kasutuse �petus (piltidega)
-* soovi korral v�ib faili ilusamaks kujundada ja pilte lisada
-* kui on sisselogimine tuua demo kasutakonto kasutajanimi ja parool �ra infofailis
-* kui projekti aluseks on v�etud neist leitud kood tuleb �ra n�idata, et mis oli ennem olemas ja mis sai juurde tehtud
-* projektiks v�iks vaikimisi teha m�ne m�ngu
-**************** siit maalt algab fail ja �lemise poole peab kustutama
 
 <h2>Programmi "Step Travel" infofail</h2>
 
@@ -24,23 +12,10 @@ salvestatakse antud päeva sammud kasutaja nimele.
 Sisestades juba olemasoleva kuupäeva sammud uuesti salvestuvad uued sammud vana
 asemele.
 
-Programm genereerib teie poolt sisestatud s�nadest random nalja jutu.<br>
-Programmi sisenemisel kuvatakse ekraanile ankeet, kus on
-lahti seletatult kirjas, mis lahtrid tuleb t�ita ja mis on selle eesm�rk.
-T�ites ankeedi ja vajutades "vaata enda lugu" nuppu, genereerib programm
-jutukese teie poolt sisestatud andmetega.<br>
-Uue jutu valimiseks tuleks vajutada refreshi ning seej�rel ilmub uus
-ankeet uute andmetega ning sisestades lahtritesse uued andmed,
-koostatakse uus jutuke.<br>
-Programm peab v�imaldama vaadata ka originaaltekste, et siis neid soovi
-korral muudetud tekstidega oleks v�imalik v�rrelda.<br>
 <p>
 
 <b>Autorist ja programmist</b><br>
-K�ivitamine:
-<a href=http://www.tmk.edu.ee/~domberg/php/projekt3/>Lahe lugu</a><br>
 autor: Kerakaru<br>
 rühm: PHP kursus 2016<br>
 juhendaja: A. Klooster<br>
-PHP projekt 3 aines Arvutiv�rgud<br>
 15.05.2016
