@@ -29,6 +29,33 @@ while($row = mysql_fetch_assoc($result))
   $stepsTotal = $row['Total'];
 }
 
+
+//Tallinn 59.43696079999999, 24.75357459999998
+      //midpoint 56.107827, 18.56961
+//Berlin 52.52000659999999, 13.404953999999975  //1042.49 kilometers (km) //center: 55.978483699999984, 19.079264299999977
+//Paris 48.856614, 2.3522219000000177 //1860.60 kilometers (km)
+
+//coordinate "constants" + distance from Tallinn
+$coordTallinn = array(59.43696079999999, 24.75357459999998, 0);
+$coordBerlin = array(52.52000659999999, 13.404953999999975, 1042);
+$coordParis = array(48.856614, 2.3522219000000177, 1860);
+
+
+
+function midpoint($lat1, $long1, $lat2, $long2, $per) {
+  //return "[" . $lat1+($lat2-$lat1)*$per . "," . $long1+($long2-$long1)*$per . "]";
+  return array($lat1+($lat2-$lat1)*$per, $long1+($long2-$long1)*$per );
+}
+
+echo "Total steps: " . $stepsTotal / 1000 . " / " . $coordBerlin[2] . "<br />";
+$progressPercentage = ( $stepsTotal / 1000) / $coordBerlin[2] ;
+echo "progress percentage: " . $progressPercentage . "<br />";
+
+$progressPoint = midpoint($coordTallinn[0], $coordTallinn[1], $coordBerlin[0], $coordBerlin[1], $progressPercentage);
+
+print_r($progressPoint);
+
+
 ?>
 
 <!-- https://developers.google.com/maps/documentation/javascript/examples/polyline-simple -->
@@ -41,10 +68,6 @@ while($row = mysql_fetch_assoc($result))
   // Kingsford Smith's first trans-Pacific flight between Oakland, CA, and
   // Brisbane, Australia.
 
-  //Tallinn 59.43696079999999, 24.75357459999998
-        //midpoint 56.107827, 18.56961
-  //Berlin 52.52000659999999, 13.404953999999975  //1042.49 kilometers (km) //center: 55.978483699999984, 19.079264299999977
-  //Paris 48.856614, 2.3522219000000177 //1860.60 kilometers (km)
 /*
 http://www.geomidpoint.com/example.html
   1. convert each decimal latitude and longitude into radians by multiplying each one by PI/180
@@ -81,7 +104,8 @@ Javascript: http://stackoverflow.com/questions/33907276/calculate-point-between-
 
     var halfpointCoordinates = [
       {lat: 59.436960, lng: 24.753574},
-      {lat: 56.107827, lng: 18.56961}
+      //{lat: 56.107827, lng: 18.56961}
+<?php echo "{lat: " . $progressPoint[0] . ", lng: " . $progressPoint[1] . "}"; ?>
     ];
     var halfPath = new google.maps.Polyline({
       path: halfpointCoordinates,
