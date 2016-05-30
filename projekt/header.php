@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>CLONEKasutajate andmebaas</title>
+  <title>Step Travel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
