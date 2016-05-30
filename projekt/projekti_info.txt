@@ -1,7 +1,7 @@
 
 <h2>Programmi "Step Travel" infofail</h2>
 
-<b>Millega tegu & kuidas kasutada</b><br>
+<p><b>Millega tegu & kuidas kasutada</b><br>
 Programm võimaldab salvestada oma päevaseid samme ja summeerida neid. Võimalus
 mänguliselt jälgida (numbriliselt ja ka visuaalselt kaardil, linnulennult) kui
 kaugele on jõutud oma sihtmärgini. Näiteks Pariis (1 samm = 1 m). Võimalus
@@ -10,12 +10,17 @@ lisada sõpru ja võrrelda nendega arengut.<br>
 valimiseks ja antud kuupäevade sammude sisestamiseks. Vajutades "Salvesta" -nuppu
 salvestatakse antud päeva sammud kasutaja nimele.
 Sisestades juba olemasoleva kuupäeva sammud uuesti salvestuvad uued sammud vana
-asemele.
+asemele. (TODO)</p>
 
-<p>
-
-<b>Autorist ja programmist</b><br>
+<p><b>Autorist ja programmist</b><br>
 autor: Kerakaru<br>
 rühm: PHP kursus 2016<br>
 juhendaja: A. Klooster<br>
 15.05.2016
+</p>
+
+<p>test kasutajad</p>
+<ul>
+  <li>muti / onu</li>
+  <li>muti2 / onu</li>
+</ul>
