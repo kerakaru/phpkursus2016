@@ -42,8 +42,23 @@ while($row = mysql_fetch_assoc($result))
   // Brisbane, Australia.
 
   //Tallinn 59.43696079999999, 24.75357459999998
+        //midpoint 56.107827, 18.56961
   //Berlin 52.52000659999999, 13.404953999999975  //1042.49 kilometers (km) //center: 55.978483699999984, 19.079264299999977
   //Paris 48.856614, 2.3522219000000177 //1860.60 kilometers (km)
+/*
+http://www.geomidpoint.com/example.html
+  1. convert each decimal latitude and longitude into radians by multiplying each one by PI/180
+  2.Convert lat/long to cartesian (x,y,z) coordinates:
+  formulas:
+    X1 = cos(lat1) * cos(lon1)
+    Y1 = cos(lat1) * sin(lon1)
+    Z1 = sin(lat1)
+  3. Compute combined weighted cartesian coordinate
+    X = (X1*w1 + X2*w2 + X3*w3)/totweight (w1=1 jne, totweight=3)
+  4. Convert cartesian coordinate to latitude and longitude for the midpoint
+
+Javascript: http://stackoverflow.com/questions/33907276/calculate-point-between-two-coordinates-based-on-a-percentage
+*/
 
   function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -64,7 +79,22 @@ while($row = mysql_fetch_assoc($result))
       strokeWeight: 5
     });
 
+    var halfpointCoordinates = [
+      {lat: 59.436960, lng: 24.753574},
+      {lat: 56.107827, lng: 18.56961}
+    ];
+    var halfPath = new google.maps.Polyline({
+      path: halfpointCoordinates,
+      geodesic: true,
+      strokeColor: '#4CAF50',
+      strokeOpacity: 0.9,
+      strokeWeight: 5
+    });
+
+
     flightPath.setMap(map);
+    halfPath.setMap(map);
+
   }
 
 
