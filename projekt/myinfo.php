@@ -52,7 +52,7 @@ check_rights(USER);
 
 <?php
 
-   $query = "SELECT * FROM users WHERE id_users='{$_SESSION['login_user']['id_users']}' LIMIT 1";
+  $query = "SELECT * FROM users WHERE id_users='{$_SESSION['login_user']['id_users']}' LIMIT 1";
 
   $result = mysql_query($query) OR die("Ebaõnnestus: " . mysql_error());
 
@@ -87,7 +87,7 @@ echo "</table>";
 
 /* ================== */
 
-
+// SAMMUD kokku
 //http://stackoverflow.com/questions/14805851/mysql-sum-column-values-based-on-row-from-the-same-table
 $query2 = "SELECT SUM(fDaysSteps) AS Total FROM tblSteps WHERE user_id = " . $_SESSION['login_user']['id_users'];
 
@@ -121,7 +121,7 @@ while($row = mysql_fetch_assoc($result2))
 
 	<!-- <div class="w3-col w3-twothird"> -->
 
-<form action="<?php  echo $_SERVER['SCRIPT_NAME']; ?>" >
+    <form action="<?php  echo $_SERVER['SCRIPT_NAME']; ?>" >
       <div class="w3-container w3-third">
         <h5 class="w3-bottombar w3-border-red">Kalender</h5>
         <!-- <p><input type="text" name="alternate" id="alternate" /></p> -->
@@ -136,7 +136,7 @@ while($row = mysql_fetch_assoc($result2))
         <p><input type="text" id="inSteps" name="inSteps" value="<?php if(isset($_GET["inSteps"])) { echo $_GET['inSteps']; } ?>" /></p>
       </div>
       <input type="submit" name="nupp" value="Sisesta" />
-</form>
+    </form>
 
 
 	</div>
@@ -154,16 +154,21 @@ foreach($_POST as $key => $val)
 }
 
 //if($_POST['nupp'] == "Sisesta")
-if($_GET['nupp'] == "Sisesta")
+//if($_GET['nupp'] == "Sisesta")
+if (isset($_GET['nupp']) && ($_GET['nupp'] == "Sisesta"))
 {
 
-  #DB query
+//Sisestada või uuendada?
+  //TODO add logic to use INSERT or UPDATE
+
+
+  #DB INSERT query
   $query = "INSERT INTO tblSteps SET
-  fDate ='".$_GET['hidedDate']."',
-  fDaysSteps ='".$_GET['inSteps']."',
-  fAddedTime = NOW(),
-  fUpdateTime = NOW(),
-  user_id=".$_SESSION['login_user']['id_users']."
+    fDate ='".$_GET['hidedDate']."',
+    fDaysSteps ='".$_GET['inSteps']."',
+    fAddedTime = NOW(),
+    fUpdateTime = NOW(),
+    user_id=".$_SESSION['login_user']['id_users']."
   ";
 
   //echo $query;

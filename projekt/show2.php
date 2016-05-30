@@ -42,7 +42,7 @@ while($row = mysql_fetch_assoc($result))
 
   echo "<tr>";
   echo "<td>".$counter."</td>";
-  echo "<td>".$row['id_tblSteps']."</td>";
+  echo "<td>".$row['idTblSteps']."</td>";
   echo "<td>".$row['user_id']."&nbsp;</td>";
 
   echo "<td>".$row['fDate']."&nbsp;</td>";
