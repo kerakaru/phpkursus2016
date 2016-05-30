@@ -79,11 +79,11 @@ while($row = mysql_fetch_assoc($result))
   echo "<tr><th>Liitunud</th><td>".$row['date_insert']."</td></tr>";
   echo "<tr><th>Andmeid uuendatud</th><td>".$row['date_change']."</td></tr>";
   echo "<tr><th>viimane login</th><td>".$row['last_login_date']."</td></tr>";
-  echo "<tr><th>samme kokku</th><td>".$row['steps_count']."</td></tr>";
+//  echo "<tr><th>samme kokku</th><td>".$row['steps_count']."</td></tr>";
 
 }
 
-echo "</table>";
+//echo "</table>";
 
 /* ================== */
 
@@ -110,9 +110,12 @@ while($row = mysql_fetch_assoc($result2))
 {
   $counter++;
 
-  echo "kokku samme: " . $row['Total'] . "<br />" ;
+//  echo "kokku samme: " . $row['Total'] . "<br />" ;
+  echo "<tr><th>samme kokku</th><td>" . $row['Total'] . "</td></tr>";
 
 }
+
+echo "</table>";
 
 ?>
 
