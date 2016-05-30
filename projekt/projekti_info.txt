@@ -4,7 +4,7 @@
 <b>Millega tegu & kuidas kasutada</b><br>
 Programm võimaldab salvestada oma päevaseid samme ja summeerida neid. Võimalus
 mänguliselt jälgida (numbriliselt ja ka visuaalselt kaardil, linnulennult) kui
-kaugele on jõutud oma sihtmärgini. Näiteks Pariis (1 samm = 1 km). Võimalus
+kaugele on jõutud oma sihtmärgini. Näiteks Pariis (1 samm = 1 m). Võimalus
 lisada sõpru ja võrrelda nendega arengut.<br>
   Programmi sisenemisel kuvatakse ekraanile ankeet, kus on väljad koopäeva
 valimiseks ja antud kuupäevade sammude sisestamiseks. Vajutades "Salvesta" -nuppu
