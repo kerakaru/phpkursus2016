@@ -66,6 +66,7 @@
   <div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
     <ul class="w3-navbar w3-left-align w3-black">
       <li><a class="w3-padding-large" href="show2.php">SAMMUD</a></li>
+      <li><a class="w3-padding-large" href="kaart2.php">KAARDIL</a></li>
       <li><a class="w3-padding-large" href="login.php">Sisse logimine</a></li>
       <li><a class="w3-padding-large" href="logout.php">Välja logimine</a></li>
 <!--      <li><a class="w3-padding-large" href="#">MERCH</a></li> -->
